@@ -3,7 +3,65 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
     body {
         @apply bg-[#06202a] text-gray-300;
+        overflow-x: hidden;
+    }
+
+    h4 {
+        @apply text-[#00ED82] uppercase font-bold text-sm md:pb-2
+    }
+}
+
+@layer components {
+    .header {
+        background: url('/img/header.jpg') no-repeat center center / cover;
+        height: 100vh;
+    }
+
+    .header::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 180px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.76) 15.54%, rgba(0, 0, 0, 0.192) 60.23%, rgba(0, 0, 0, 8e-05) 100%);
+    }
+
+    .header__nav {
+        @apply flex items-center justify-between p-8 relative z-10
+    }
+
+    .logo {
+        @apply h-5
+    }
+
+    .login {
+        @apply uppercase text-base font-bold
+    }
+    .header__content {
+        @apply flex flex-col items-center justify-start mt-16 h-full space-y-4 text-center px-12 max-w-md md:max-w-3xl mx-auto
+    }
+    .banner{
+        @apply w-80 md:w-4/5
+    }
+    .header__text--description {
+        @apply font-bold text-lg text-white pb-2 leading-tight md:text-2xl
+    }
+    .cta {
+        @apply block uppercase w-full border-0 rounded-sm bg-[#00ED82] text-black font-bold py-3
+    }
+    .legal__text {
+        @apply text-[10px] font-semibold
+    }
+    .helper__text {
+        @apply text-white underline tracking-wide text-lg
     }
 }

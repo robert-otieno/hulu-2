@@ -13,9 +13,9 @@ function home() {
       <main>
         <header className='header'>
           <nav className='header__nav'>
-            <img src="" alt="" className="logo" />
+            <img src="/img/logo.png" alt="" className="logo" />
             <ul>
-              <li><button className="login"></button></li>
+              <li><button className="login">log in</button></li>
             </ul>
           </nav>
 
@@ -25,9 +25,9 @@ function home() {
             <div className="header__text--description">Get endless entertainment, live sports, and the shows and movies you love.</div>
             <button className="cta">get the disney bundle</button>
             <div className="legal__text">
-              <a href="">Whats included</a>
-              <span>See</span>
-              <a href="">Bundle terms</a>
+              <a className='underline' href="#">What's included?</a>
+              <span className='font-light'> See</span>
+              <a className='underline' href="#"> Bundle terms</a>
             </div>
             <div className="helper__text">Sign up for Hulu only</div>
           </div>
