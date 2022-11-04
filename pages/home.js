@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-function home() {
+export default function Home() {
   const [isClicked, setIsClicked] = useState('live-sports')
 
   const news_content = [
@@ -163,5 +163,3 @@ function home() {
     </div>
   )
 }
-
-export default home
