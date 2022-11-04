@@ -4,4 +4,4 @@ This is a [Next.js](https://nextjs.org/) Hulu 2.0 project bootstrapped with [`cr
 
 > Hulu 2.0 with REACT.JS! (Next.js, Tailwind CSS, Responsive). 
 
-![Hulu Clone](/img/screen.png 'Hulu Clone')
+![Hulu Clone](/public/img/screen.png 'Hulu Clone')
