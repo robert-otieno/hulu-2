@@ -64,7 +64,7 @@ export default function Home() {
             <div className="header__text--description">Get endless entertainment, live sports, and the shows and movies you love.</div>
             <button className="cta">get the disney bundle</button>
             <div className="legal__text">
-              <a className='underline' href="#">What's included?</a>
+              <a className='underline' href="#">What&apos;s included?</a>
               <span className='font-light'> See</span>
               <a className='underline' href="#"> Bundle terms</a>
             </div>
@@ -136,11 +136,11 @@ export default function Home() {
 
         <section className={`news ${ isClicked }`} >
           <div className="news__content">
-            <div class="tabs">
-              <ul class="flex flex-wrap gap-2 -mb-px">
-                <li class="mr-2"><button onClick={() => setIsClicked('live-sports')} class={`tab__links ${ isClicked === 'live-sports' && 'active' }`}>Live Sports</button></li>
-                <li class="mr-2"><button onClick={() => setIsClicked('breaking-news')} class={`tab__links ${ isClicked === 'breaking-news' && 'active' }`} aria-current="page">Breaking News</button></li>
-                <li class="mr-2"><button onClick={() => setIsClicked('biggest-events')} class={`tab__links ${ isClicked === 'biggest-events' && 'active' }`}>Biggest Events</button></li>
+            <div className="tabs">
+              <ul className="flex flex-wrap gap-2 -mb-px">
+                <li class="mr-2"><button onClick={() => setIsClicked('live-sports')} className={`tab__links ${ isClicked === 'live-sports' && 'active' }`}>Live Sports</button></li>
+                <li className="mr-2"><button onClick={() => setIsClicked('breaking-news')} className={`tab__links ${ isClicked === 'breaking-news' && 'active' }`} aria-current="page">Breaking News</button></li>
+                <li className="mr-2"><button onClick={() => setIsClicked('biggest-events')} className={`tab__links ${ isClicked === 'biggest-events' && 'active' }`}>Biggest Events</button></li>
               </ul>
             </div>
             {news_content.map((content, i) => (
