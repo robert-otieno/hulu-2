@@ -15,7 +15,7 @@
     }
 
     h4 {
-        @apply text-[#00ED82] uppercase font-bold text-sm md:pb-2
+        @apply text-[#00ED82] uppercase font-bold text-[13px] md:pb-2 tracking-wide
     }
 }
 
@@ -26,42 +26,129 @@
     }
 
     .header::after {
+        @apply absolute w-full left-0 top-0 h-48;
         content: '';
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        height: 180px;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.76) 15.54%, rgba(0, 0, 0, 0.192) 60.23%, rgba(0, 0, 0, 8e-05) 100%);
     }
-
     .header__nav {
         @apply flex items-center justify-between p-8 relative z-10
     }
-
     .logo {
         @apply h-5
     }
-
     .login {
         @apply uppercase text-base font-bold
     }
     .header__content {
         @apply flex flex-col items-center justify-start mt-16 h-full space-y-4 text-center px-12 max-w-md md:max-w-3xl mx-auto
     }
-    .banner{
+    .banner {
         @apply w-80 md:w-4/5
     }
     .header__text--description {
         @apply font-bold text-lg text-white pb-2 leading-tight md:text-2xl
     }
+    .text--heading {
+        @apply py-2 font-bold text-3xl md:text-5xl text-white
+    }
+    .text--description {
+        @apply font-normal leading-snug md:text-lg
+    }
     .cta {
         @apply block uppercase w-full border-0 rounded-sm bg-[#00ED82] text-black font-bold py-3
     }
     .legal__text {
-        @apply text-[10px] font-semibold
+        @apply text-[10px] font-semibold pt-3 text-gray-200
     }
     .helper__text {
         @apply text-white underline tracking-wide text-lg
+    }
+    .section {
+        @apply py-10 flex flex-col items-center text-center max-w-sm md:max-w-6xl mx-auto
+    }
+
+    /* Categories */
+    .categories__content {
+        @apply my-10 space-y-3 md:max-w-3xl
+    }
+    .categories__grid {
+        @apply grid grid-cols-2 md:grid-cols-4 gap-5 mt-10 w-full h-full
+    }
+    .covers > div {
+        @apply relative 
+    }
+    .cover__overlay {
+        @apply absolute top-0 left-0 w-full h-full;
+        background: linear-gradient( 156.82deg, rgba(0, 0, 0, 0.6) 4.58%, rgba(0, 0, 0, 0) 69.61% ),
+          linear-gradient( 24.5deg, rgba(0, 0, 0, 0.2) 4.71%, rgba(0, 0, 0, 0) 71.49% );
+    }
+    .cover__text {
+        @apply absolute top-5 left-5 text-left text-white
+    }
+    .cover__subheading {
+        @apply text-[12px] font-semibold
+    }
+    .cover__heading {
+        @apply text-lg
+    }
+
+    /* Live */
+    .live {
+        @apply space-y-4 h-screen flex items-center justify-center max-w-3xl
+    }
+    
+    /* News */
+    .news {
+        @apply relative text-white h-screen
+    }
+    .live-sports {
+        background: url('/img/live-sports-small.jpg') no-repeat top center / cover;
+    }
+    .breaking-news {
+        background: url('/img/breaking-news-small.jpg') no-repeat top center / cover;
+    }
+    .biggest-events {
+        background: url('/img/biggest-events-small.jpg') no-repeat top center / cover;
+    }
+    .news::after {
+        @apply absolute w-full left-0 top-0 h-64;
+        content: '';
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.76) 15.54%, rgba(0, 0, 0, 0.192) 60.23%, rgba(0, 0, 0, 8e-05) 100%);
+    }
+    .news__content {
+        @apply max-w-sm mx-auto flex flex-col items-center text-center pt-8 relative md:absolute z-10 md:text-left md:top-20 md:left-40 md:items-start
+    }
+    .tabs {
+        @apply text-sm font-medium text-center text-gray-400 uppercase tracking-tight md:text-left
+    }
+    .tab__links {
+        @apply uppercase pb-3 border-b-8 border-transparent hover:text-gray-300 hover:border-gray-300
+    }
+    .tab__content {
+        @apply hidden
+    }
+    .active {
+        @apply text-gray-300 border-gray-300
+    }
+    .channels {
+        @apply my-6 flex gap-2 justify-center md:justify-start;
+    }
+    .channel {
+        @apply h-16 w-16 flex items-center justify-center;
+        background: url('/img/network-logo-bg.png') no-repeat center center / cover;
+    }
+    .channel > img:last-of-type {
+        @apply w-10
+    }
+    @media (min-width: 768px) {
+        .live-sports {
+            background: url('/img/live-sports.jpg') no-repeat top center / cover;
+        }
+        .breaking-news {
+            background: url('/img/breaking-news.jpg') no-repeat top center / cover;
+        }
+        .biggest-events {
+            background: url('/img/biggest-events.jpg') no-repeat top center / cover;
+        }
     }
 }

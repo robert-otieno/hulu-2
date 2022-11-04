@@ -1,7 +1,46 @@
 import Head from 'next/head'
-import React from 'react'
+import Image from 'next/image'
+import React, { useState } from 'react'
 
 function home() {
+  const [isClicked, setIsClicked] = useState('live-sports')
+
+  const news_content = [
+    {
+      id: "live-sports",
+      heading: "Live Sports",
+      description: "Catch your games at home or on the go. Stream live games from major college and pro leagues including the NCAA®, NBA, NHL, NFL, and more.",
+      channels: [
+        { image: "/img/live-sports-logo-1.png" },
+        { image: "/img/live-sports-logo-2.png" },
+        { image: "/img/live-sports-logo-3.svg" },
+        { image: "/img/live-sports-logo-4.png" },
+      ]
+    },
+    {
+      id: "breaking-news",
+      heading: "Breaking News",
+      description: "Keep pace with what's going on locally and globally with trusted opinions from all the top news networks.",
+      channels: [
+        { image: "/img/breaking-news-logo-1.png" },
+        { image: "/img/breaking-news-logo-2.svg" },
+        { image: "/img/breaking-news-logo-3.png" },
+        { image: "/img/breaking-news-logo-4.svg" },
+      ]
+    },
+    {
+      id: "biggest-events",
+      heading: "Biggest Events",
+      description: "Spectacular, can't-miss moments like the Olympics, Grammys®, Oscars®, Emmys®, and more.",
+      channels: [
+        { image: "/img/biggest-events-logo-1.png" },
+        { image: "/img/biggest-events-logo-2.png" },
+        { image: "/img/biggest-events-logo-3.png" },
+        { image: "/img/biggest-events-logo-4.png" },
+      ]
+    }
+  ]
+
   return (
     <div>
       <Head>
@@ -33,44 +72,91 @@ function home() {
           </div>
         </header>
 
-        <section className="categories">
-          <h4>included in all plans</h4>
-          <div className="main__heading">All The TV You Love</div>
-          <div className="main__text">Stream full seasons of exclusive series, current-season episodes, hit movies, Hulu Originals, kids shows, and more.</div>
-          <div className="categories__grid">
+        <section className="section categories">
+          <div className="categories__content">
+            <h4>included in all plans</h4>
+            <div className="text--heading">All The TV You Love</div>
+            <div className="text--description">Stream full seasons of exclusive series, current-season episodes, hit movies, Hulu Originals, kids shows, and more.</div>
+          </div>
+
+          <div className="categories__grid covers">
             <div className="cover--1">
-              <div className="categories__subheading">Past & Current Seasons</div>
-              <div className="categories__heading">TV Shows</div>
+              <Image src='/img/cover-1.jpg' height={500} width={300} />
+              <div className="cover__overlay"></div>
+              <div className="cover__text">
+                <div className="cover__subheading">Past & Current Seasons</div>
+                <div className="cover__heading">TV Shows</div>
+              </div>
             </div>
-            <div className="cover--2"></div>
-            <div className="categories__subheading">New & Classic</div>
-              <div className="categories__heading">Movies</div>
+
+            <div className="cover--2">
+              <Image src='/img/cover-2.jpg' height={500} width={300} />
+              <div className="cover__overlay"></div>
+              <div className="cover__text">
+                <div className="cover__subheading">New & Classic</div>
+                <div className="cover__heading">Movies</div>
+              </div>
+            </div>
+
             <div className="cover--3">
-            <div className="categories__subheading">Groundbreaking</div>
-              <div className="categories__heading">Hulu Originals</div>
+              <Image src='/img/cover-3.jpg' height={500} width={300} />
+              <div className="cover__overlay"></div>
+              <div className="cover__text">
+                <div className="cover__subheading">Groundbreaking</div>
+                <div className="cover__heading">Hulu Originals</div>
+              </div>
             </div>
+
             <div className="cover--4">
-            <div className="categories__subheading">Add-on</div>
-              <div className="categories__heading">Premiums</div>
+              <Image src='/img/cover-4.jpg' height={500} width={300} />
+              <div className="cover__overlay"></div>
+              <div className="cover__text">
+                <div className="cover__subheading">Add-on</div>
+                <div className="cover__heading">Premiums</div>
+              </div>
             </div>
           </div>
           <div className="legal__text">Premium network add-ons available for an additional cost</div>
         </section>
 
-        <section className="live">
+        <section className="section live">
           <h4>Hulu + Live TV, now with disney+ and espn+</h4>
-          <div className="main__heading">Live TV Makes It Better</div>
-          <div className="main__text">Make the switch from cable. Get 75+ top channels on Hulu + Live TV with your favorite live sports, news, and events - plus the entire Hulu streaming library. With Unlimited DVR, store Live TV recordings for up to nine months and fast-forward through your DVR content. Access endless entertainment with Disney+ and live sports with ESPN+.</div>
-          <div className="helper__text">view channels in your area</div>
-          <div className="chevron">arrowDown</div>
+
+          <div className="text--heading">Live TV Makes It Better</div>
+
+          <div className="text--description">Make the switch from cable. Get 75+ top channels on Hulu + Live TV with your favorite live sports, news, and events - plus the entire Hulu streaming library. With Unlimited DVR, store Live TV recordings for up to nine months and fast-forward through your DVR content. Access endless entertainment with Disney+ and live sports with ESPN+.</div>
+
+          <div className="helper__text uppercase">view channels in your area</div>
+
+          <div className="chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 animate-bounce">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          </div>
         </section>
 
-        <section className="news">
+        <section className={`news ${ isClicked }`} >
           <div className="news__content">
-            <div className="main__heading">Live Sports</div>
-            <div className="main__text">Catch your games at home or on the go. Stream live games from major college and pro leagues including the NCAA®, NBA, NHL, NFL, and more.</div>
-            <div className="channels"></div>
-            <div className="legal__text">Live TV plan required. Regional restrictions, blackouts and additional terms apply. See details</div>
+            <div class="tabs">
+              <ul class="flex flex-wrap gap-2 -mb-px">
+                <li class="mr-2"><button onClick={() => setIsClicked('live-sports')} class={`tab__links ${ isClicked === 'live-sports' && 'active' }`}>Live Sports</button></li>
+                <li class="mr-2"><button onClick={() => setIsClicked('breaking-news')} class={`tab__links ${ isClicked === 'breaking-news' && 'active' }`} aria-current="page">Breaking News</button></li>
+                <li class="mr-2"><button onClick={() => setIsClicked('biggest-events')} class={`tab__links ${ isClicked === 'biggest-events' && 'active' }`}>Biggest Events</button></li>
+              </ul>
+            </div>
+            {news_content.map((content, i) => (
+              <div key={i} id={content.id} className={`${ isClicked === content.id ? 'block' : 'hidden' } space-y-4`}>
+                <div className="text--heading mt-10">{content.heading}</div>
+                <div className="text--description">{content.description}</div>
+                <div className="channels">
+                  {content.channels.map((channel, i) => (
+                    <div key={i} className="channel">
+                      <img src={channel.image} alt="" />
+                    </div>
+                  ))}
+                </div>
+                <div className="legal__text max-w-xs mx-auto md:max-w-md">Live TV plan required. Regional restrictions, blackouts and additional terms apply. <span className='underline'>See details</span></div>
+              </div>
+            ))}
           </div>
         </section>
       </main>
