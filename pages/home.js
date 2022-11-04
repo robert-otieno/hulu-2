@@ -138,7 +138,7 @@ export default function Home() {
           <div className="news__content">
             <div className="tabs">
               <ul className="flex flex-wrap gap-2 -mb-px">
-                <li class="mr-2"><button onClick={() => setIsClicked('live-sports')} className={`tab__links ${ isClicked === 'live-sports' && 'active' }`}>Live Sports</button></li>
+                <li className="mr-2"><button onClick={() => setIsClicked('live-sports')} className={`tab__links ${ isClicked === 'live-sports' && 'active' }`}>Live Sports</button></li>
                 <li className="mr-2"><button onClick={() => setIsClicked('breaking-news')} className={`tab__links ${ isClicked === 'breaking-news' && 'active' }`} aria-current="page">Breaking News</button></li>
                 <li className="mr-2"><button onClick={() => setIsClicked('biggest-events')} className={`tab__links ${ isClicked === 'biggest-events' && 'active' }`}>Biggest Events</button></li>
               </ul>
